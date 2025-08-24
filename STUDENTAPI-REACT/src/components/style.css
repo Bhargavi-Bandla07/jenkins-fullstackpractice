@@ -1,140 +1,156 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Container */
 .student-container {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 30px;
-  border-radius: 12px;
-  background-color: white;
-  box-shadow: 0px 4px 16px black;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
 }
 
-h2, h3 {
-  color: #333;
-  margin-bottom: 10px;
+/* Headings */
+h2 {
+  font-size: 28px;
+  color: #222;
+  margin-bottom: 15px;
 }
 
+h3 {
+  font-size: 20px;
+  margin: 15px 0;
+  color: #444;
+}
+
+/* Inputs */
 input, select {
-  padding: 10px;
-  margin: 8px 0;
   width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-sizing: border-box;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.btn-group {
-  margin-top: 10px;
-}
-
-button {
-  padding: 10px 16px;
-  margin: 10px 8px 10px 0;
+  padding: 12px 14px;
+  margin: 8px 0;
   border: none;
-  color: white;
-  border-radius: 6px;
+  border-radius: 12px;
+  outline: none;
+  background: rgba(240, 240, 240, 0.9);
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+  background: #fff;
+  box-shadow: 0 0 0 2px #6a11cb;
+}
+
+/* Buttons */
+button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  margin: 6px;
+  transition: all 0.3s ease;
 }
 
 .btn-blue {
-  background-color: #007bff;
+  background: #6a11cb;
+  color: white;
 }
 
 .btn-blue:hover {
-  background-color: #0056b3;
+  background: #2575fc;
 }
 
 .btn-green {
-  background-color: #28a745;
+  background: #28c76f;
+  color: white;
 }
 
 .btn-green:hover {
-  background-color: #1c7c34;
+  background: #20a65a;
 }
 
 .btn-red {
-  background-color: #dc3545;
+  background: #ff4b5c;
+  color: white;
 }
 
 .btn-red:hover {
-  background-color: #a71d2a;
+  background: #c9182b;
 }
 
 .btn-gray {
-  background-color: #6c757d;
+  background: #adb5bd;
+  color: white;
 }
 
 .btn-gray:hover {
-  background-color: #565e64;
+  background: #6c757d;
 }
 
-/* Table container removed to avoid scroll */
+/* Table */
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
-  background-color: white;
-  border-radius: 6px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
-  padding: 12px 14px;
+  padding: 14px;
   text-align: left;
-  border-bottom: 1px solid #e0e0e0;
-  vertical-align: middle;
 }
 
 th {
-  background-color: #f1f1f1;
-  font-weight: 600;
+  background: #6a11cb;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+tr:hover {
+  background: #eef2ff;
 }
 
 .action-buttons {
   display: flex;
-  gap: 8px;
+  gap: 6px;
+  justify-content: center;
 }
 
-pre {
-  background-color: #f0f0f0;
-  padding: 10px;
-  border-radius: 6px;
-  overflow-x: auto;
-}
-
-.message {
-  margin-top: 20px;
-  color: #dc3545;
-  font-weight: 500;
-}
+/* Messages */
 .message-banner {
-  position: fixed;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #4caf50; 
-  color: white;
-  padding: 12px 24px;
-  border-radius: 6px;
+  margin: 15px 0;
+  padding: 12px;
+  border-radius: 10px;
   font-weight: bold;
-  z-index: 1000;
-  text-align: center;
-  min-width: 300px;
-  max-width: 80%;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-
-.message-banner.error {
-  background-color: #f44336;
+  animation: fadeIn 0.4s ease;
 }
 
 .message-banner.success {
-  background-color: #4caf50; 
+  background: #28c76f;
+  color: white;
+}
+
+.message-banner.error {
+  background: #ff4b5c;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
