@@ -8,7 +8,7 @@ pipeline {
         // ===== FRONTEND BUILD =====
         stage('Build Frontend') {
             steps {
-                dir('STUDENTAPI-REACT') {
+                dir('React') {
                     bat 'npm install'
                     bat 'npm run build'
                 }
@@ -31,7 +31,7 @@ pipeline {
         // ===== BACKEND BUILD =====
         stage('Build Backend') {
             steps {
-                dir('STUDENTAPI-SPRINGBOOT') {
+                dir('SPRINGBOOT') {
                     bat 'mvn clean package'
                 }
             }
